@@ -51,7 +51,7 @@
         android:id="@+id/alarmLabel"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:hint="Enter your alarm name:"
+        android:hint="@string/enter_alarm"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/set"
         app:layout_constraintEnd_toEndOf="parent"

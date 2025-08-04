@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">timescape</string>
+    <string name="stop">STOP ALARM</string>
+    <string name="enter_alarm">Enter your alarm name:</string>
 </resources>
