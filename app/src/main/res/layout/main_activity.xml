@@ -26,23 +26,38 @@
         android:id="@+id/set"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Set my Alarm"
-        android:onClick=""
+        android:layout_marginTop="64dp"
+        android:text="Set this Alarm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clock"
-        app:layout_constraintVertical_bias="0.227" />
+        app:layout_constraintVertical_bias="0.208" />
 
     <Button
         android:id="@+id/Stop"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Stop"
+        android:text="stop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/set" />
+        app:layout_constraintTop_toBottomOf="@+id/set"
+        app:layout_constraintVertical_bias="0.447" />
+
+    <EditText
+        android:id="@+id/alarmLabel"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter your alarm name:"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/set"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clock" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
