@@ -78,7 +78,7 @@ public class activity_main extends AppCompatActivity {
 
         //small message to show alarm is set or if it is unavailable
         if (alarmManager != null) {
-            alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
             Toast.makeText(this, "Alarm set for " + hour + ":" + String.format("%02d", minute), Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "AlarmManager not available", Toast.LENGTH_SHORT).show();
