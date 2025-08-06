@@ -7,20 +7,19 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.EditText;
 import java.util.Calendar;
+import java.util.Locale;
 
 //main activity class where the magic happens
 public class activity_main extends AppCompatActivity {
 //private variable declaration
     private EditText alarmLabel;
     private TimePicker timePicker;
-    private Button buttonSet, buttonStop;
     private PendingIntent pendingIntent;
 
     @Override
@@ -31,8 +30,8 @@ public class activity_main extends AppCompatActivity {
         //UI variables/constituents
         timePicker = findViewById(R.id.clock);
         alarmLabel =findViewById(R.id.alarmLabel);
-        buttonSet = findViewById(R.id.set);
-        buttonStop = findViewById(R.id.Stop);
+        Button buttonSet = findViewById(R.id.set);
+        Button buttonStop = findViewById(R.id.Stop);
 
         //set and stop button activators
         buttonSet.setOnClickListener(v -> setAlarm());
@@ -78,8 +77,8 @@ public class activity_main extends AppCompatActivity {
 
         //small message to show alarm is set or if it is unavailable
         if (alarmManager != null) {
-            alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
-            Toast.makeText(this, "Alarm set for " + hour + ":" + String.format("%02d", minute), Toast.LENGTH_SHORT).show();
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+            Toast.makeText(this, "Alarm set for " + hour + ":" + String.format(Locale.US,"%02d", minute), Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "AlarmManager not available", Toast.LENGTH_SHORT).show();
         }
